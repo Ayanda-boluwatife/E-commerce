@@ -1,0 +1,60 @@
+:root{
+    --primary: #ff4757;
+    --bg: hsl(210, 12%, 94%);
+    --orange: #ffa502;
+    --green: #2ed573;
+    --blue: #3742fa;
+    --pink: #D980FA;
+    --lime: #C4E538;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg);
+}
+
+.site{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.like{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.like, label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.like label{
+    font-size: 2em;
+    width: 72px;
+    height: 72px;
+    cursor: pointer;
+    z-index: 10;
+    color: #ced6e0;
+}
+
+.like input:checked -- label {
+    color: var(--primary);
+}
+
+.like input:checked --- label{
+    color: var(--primary);
+}
