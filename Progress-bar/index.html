@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular-progress-bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="page" class="site">
+        <div class="box vue">
+            <div class="circle">
+                <svg>
+                    <defs>
+                        <linearGradient id="gradient-vue" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0" stop-color="var(--vue-color)" />
+                            <stop offset="100%" stop-color="#5eaefd" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="95" cy="95" r="95" stroke="url(#gradient-vue)"></circle>
+                </svg>
+                <div class="inside">
+                    <span>95%</span>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <h4>Vue.js</h4>
+        </div>
+        <div class="box js">
+            <div class="circle">
+                <svg>
+                    <defs>
+                        <linearGradient id="gradient-js" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0" stop-color="var(--js-color)" />
+                            <stop offset="100%" stop-color="#ffd200" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="95" cy="95" r="95" stroke="url(#gradient-js)"></circle>
+                </svg>
+                <div class="inside">
+                    <span>90%</span>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <h4>Javascript</h4>
+        </div>
+        <div class="box react">
+            <div class="circle">
+                <svg>
+                    <defs>
+                        <linearGradient id="gradient-react" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0" stop-color="var(--react-color)" />
+                            <stop offset="100%" stop-color="#f45c43" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="95" cy="95" r="95" stroke="url(#gradient-react)"></circle>
+                </svg>
+                <div class="inside">
+                    <span>80%</span>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <h4>React.js</h4>
+        </div>
+    </div>
+</body>
+</html>

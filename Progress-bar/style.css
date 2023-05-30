@@ -1,0 +1,189 @@
+
+:root{
+    --white: #fff;
+    --bg: #2d3040;
+    --border: #67709f;
+    --dark: #232631;
+
+    --vue-color: #00bc9b;
+    --js-color: #f7971e;
+    --react-color: #eb3349;
+
+    --vue-percent: 95;
+    --js-percent: 90;
+    --react-percent: 80;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg);
+}
+
+.site{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 2em;
+    align-items: center;
+    gap: 1em;
+    background: rgba(0 0 0 / 7%);
+}
+
+.box :where(.circle, svg){
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    z-index: 10%;
+}
+
+.box svg{
+    transform: rotate(270deg);
+}
+
+.box svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    /* stroke: red; */
+    transform: translate(5px, 5px);
+    stroke-width: 8px;
+    stroke-linecap: round;
+    stroke-dasharray: 596;
+    stroke-dashoffset: calc(596 - (596 * var(--vue-percent)) / 100);
+    animation: progress 2s linear forwards;
+}
+
+.box.js svg circle{
+    stroke-dashoffset: calc(596 - (596 * var(--js-percent)) / 100);
+}
+
+.box.react svg circle{
+    stroke-dashoffset: calc(596 - (596 * var(--react-percent)) / 100);
+}
+
+@keyframes progress {
+    from{
+        stroke-dashoffset: 596;
+    }
+}
+
+.box .circle .inside{
+    position: absolute;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    top: 20px;
+    left: 20px;
+    background-color: var(--dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box .circle .inside::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    transform: scale(1.19);
+}
+
+.box .circle .inside span{
+    font-size: 2.5em;
+    font-weight: 200;
+    background-image: linear-gradient(135deg, var(--bg), var(--border));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: scale(0.2) translateY(50px);
+    animation: show 1s 1s forwards;
+}
+
+@keyframes show {
+    to{
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.box .circle .inside .dot{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 1;
+    animation: dot 2s linear forwards;
+}
+
+@keyframes dot {
+    from{
+        transform: rotate(0);
+        opacity: 0;
+    }
+}
+
+.box .circle .inside .dot::before{
+    content: "";
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--vue-color);
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.box.vue .circle .inside .dot{
+    transform: rotate(calc(3.6deg * var(--vue-percent)));
+}
+
+.box.js .circle .inside .dot{
+    transform: rotate(calc(3.6deg * var(--js-percent)));
+}
+
+.box.react .circle .inside .dot{
+    transform: rotate(calc(3.6deg * var(--react-percent)));
+}
+
+.box.vue .circle .inside .dot::before{
+    background-color: var(--vue-color);
+    box-shadow: 0 0 10px var(--vue-color);
+}
+
+.box.js .circle .inside .dot::before{
+    background-color: var(--js-color);
+    box-shadow: 0 0 10px var(--js-color);
+}
+
+.box.react .circle .inside .dot::before{
+    background-color: var(--react-color);
+    box-shadow: 0 0 10px var(--react-color);
+}
+
+.box h4{
+    font-size: 1.25em;
+    font-weight: 400;
+    color: var(--white);
+}

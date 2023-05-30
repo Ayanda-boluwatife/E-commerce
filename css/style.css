@@ -312,6 +312,16 @@ nav .fly-item{
     background-color: var(--secondary-dark-color);
 }
 
+.mega .flexcol{
+    flex: 1;
+    min-width: 180px;
+    padding-right: 2.5em;
+    margin-bottom: 1.5em;
+    z-index: 1;
+}
+
+
+
 @media screen and (max-width:992px) {
     .container{
         padding: 0 2rem;
@@ -337,5 +347,19 @@ nav .fly-item{
 
     .header-nav .right li > a{
         margin-left: 1em;
+    }
+
+    nav .mega{
+        position: absolute;
+        width: var(--percent100);
+        height: auto;
+        top: auto;
+        left: 0;
+        right: 0;
+        padding: 2.5em;
+        line-height: 2em;
+        background-color: var(--light-bg-color);
+        box-shadow: rgba(0 0 0 / 20%) 0 30px 20px -30px;
+        z-index: 100;
     }
 }
